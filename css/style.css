@@ -1,0 +1,60 @@
+body {
+  font: 62.5% "Trebuchet MS", sans-serif;
+  color: #FFFFFF;
+  background: #222222;
+  margin: 10px;
+}
+
+h1 {
+  color: #98D2FB;
+}
+
+li {
+  margin-left: 0;
+}
+
+#global-controls {
+  float: right;
+  padding: 5px;
+  border: 1px solid #98D2FB;
+  border-radius: 5px;
+}
+
+#global-controls a, #global-controls p {
+  float: left;
+  margin: 0;
+}
+
+.transfer-rate {
+  float: left;
+  width: 80px;
+}
+
+.transfer-rate span {
+  float: left;
+}
+
+.template {
+  display: none;
+}
+
+#downloads {
+  width: 100%;
+}
+
+.download h3 {
+  height: 24px;
+  padding: 10px 30px 0px 30px;
+}
+
+.progress {
+  min-width: 200px;
+  text-align: center;
+}
+
+.progress-bar {
+  opacity: 0.7;
+  border-radius: 5;
+  background: url('dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png');
+  float: left;
+}

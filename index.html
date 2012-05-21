@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>aria2js</title>
+
+    <link rel="stylesheet" type="text/css" href="css/dot-luv/jquery-ui-1.8.20.custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.base64.min.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/rpc.js"></script>
+    <script type="text/javascript" src="js/aria2.js"></script>
+    <script type="text/javascript" src="js/plumbing.js"></script>
+  </head>
+  <body>
+    <div id="global-controls">
+      <a href="#" id="resume-all-button" class="ui-icon ui-icon-play" title="Resume all downloads"></a>
+      <a href="#" id="pause-all-button" class="ui-icon ui-icon-pause" title="Pause all downloads"></a>
+
+      <p class="ui-icon ui-icon-grip-dotted-vertical">&nbsp;</p>
+
+      <p class="transfer-rate" style="color: #ffffff">
+        <span class="ui-icon ui-icon-arrowthick-1-s" title="Download Rate"></span>
+        <span id="download-rate" class="transfer-rate-value">n/a</span>
+      </p>
+      <p class="transfer-rate" style="color: #ffffff">
+        <span class="ui-icon ui-icon-arrowthick-1-n" title="Upload Rate"></span>
+        <span id="upload-rate" class="transfer-rate-value">n/a</span>
+      </p>
+
+      <p class="ui-icon ui-icon-grip-dotted-vertical">&nbsp;</p>
+
+      <a href="#" id="open-button" class="ui-icon ui-icon-folder-open" title="Start new download"></a>
+      <a href="#" id="refresh-button" class="ui-icon ui-icon-refresh" title="Update download information"></a>
+      <a href="#" id="settings-button" class="ui-icon ui-icon-gear" title="Change the settings of Aria2 and Aria2JS"></a>
+      <a href="#" id="info-button" class="ui-icon ui-icon-lightbulb" title="Show aria2 information"></a>
+      <a href="#" id="shutdown-button" class="ui-icon ui-icon-power" title="Shut down Aria2"></a>
+    </div>
+
+    <h1>aria2js</h1>
+
+    <div id="downloads">
+    </div>
+
+    <!-- =======================================================================
+        Templates
+    -->
+
+    <div id="new-download-dialog" class="template"></div>
+
+    <div id="settings-dialog" class="template"></div>
+
+    <div id="info-dialog" class="template" title="aria2 Information">
+      <table>
+        <tr>
+          <td>aria2js Version</td>
+          <td>0.1</td>
+        </tr>
+        <tr>
+          <td>aria2 Version</td>
+          <td id="info-aria2-version"></td>
+        </tr>
+        <tr>
+          <td>URL</td>
+          <td id="info-url"></td>
+        </tr>
+        <tr>
+          <td>Enabled Features</td>
+          <td><ul id="info-features"></ul></td>
+        </tr>
+        <tr>
+          <td>Session ID</td>
+          <td id="info-session-id"></td>
+        </tr>
+      </table>
+
+      <p>This web frontend for aria2 was made by Chris Ortner. If you like it and happen to meet him one day, consider buying him a beer.</p>
+    </div>
+
+  </body>
+</html>
