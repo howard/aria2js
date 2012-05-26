@@ -52,9 +52,23 @@ li {
   text-align: center;
 }
 
+.accordion-header {
+}
+
+.download-name {
+  display: none;
+}
+
 .progress-bar {
   opacity: 0.7;
-  border-radius: 5;
-  background: url('dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png');
+  width: 100%;
+  margin-right: 10px;
+}
+
+.download-controls {
+}
+
+.download-controls a {
   float: left;
+  margin: 0;
 }

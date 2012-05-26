@@ -150,5 +150,12 @@ var Aria2 = {
       Aria2RPC.pause(null, gid);
     else
       Aria2RPC.pauseAll(null);
+  },
+
+  /**
+   * Removes a download specified by its gid from the download queue.
+   */
+  remove: function (gid) {
+    Aria2RPC.remove(null, gid);
   }
 };
