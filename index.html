@@ -49,7 +49,11 @@
         Templates
     -->
 
-    <div id="new-download-dialog" class="template"></div>
+    <div id="new-download-dialog" class="template">
+      <input type="text" id="file-url" name="file-url"/>
+      <div id="drop-zone">Drag and drop files here!</div>
+      <input type="file" id="files" name="files[]" multiple/>
+    </div>
 
     <div id="settings-dialog" class="template"></div>
 
@@ -84,21 +88,30 @@
       <div class="accordion-header">
         <div class="progress-bar">
           <p class="download-name">Title</p>
-          <p class="transfer-rate" style="color: #ffffff">
-            <span class="ui-icon ui-icon-arrowthick-1-s" title="Download Rate"></span>
-            <span class="download-rate transfer-rate-value">n/a</span>
-          </p>
+
+          <!--<p class="download-controls">
+            <a href="#" class="resume-button">Resume</a>
+            <a href="#" class="pause-button">Pause</a>
+            <a href="#" class="remove-button">Remove</a>
+          </p>-->
+
           <p class="transfer-rate" style="color: #ffffff">
             <span class="ui-icon ui-icon-arrowthick-1-n" title="Upload Rate"></span>
             <span class="upload-rate transfer-rate-value">n/a</span>
           </p>
-        <!--<div class="download-controls">-->
+          <p class="transfer-rate" style="color: #ffffff">
+            <span class="ui-icon ui-icon-arrowthick-1-s" title="Download Rate"></span>
+            <span class="download-rate transfer-rate-value">n/a</span>
+          </p>
+
+          <p class="download-progress"><span class="download-progress-value">n/a</span> %</p>
+        </div>
+        <!--<div class="download-controls">
           <a href="#" class="ui-icon ui-icon-play resume-button" title="Resume download"></a>
           <a href="#" class="ui-icon ui-icon-pause pause-button" title="Pause download"></a>
           <a href="#" class="ui-icon ui-icon-trash remove-button" title="Remove download from queue"></a>
           <!--<a href="#" class="purge-button" class="ui-icon ui-icon-trash" title="Remove download from queue and delete all data"></a>-->
         <!--</div>-->
-        </div>
       </div>
       <div class="accordion-expansion">
       </div>

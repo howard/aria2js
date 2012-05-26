@@ -61,20 +61,24 @@ li {
   margin-right: 10px;
 }
 
-.progress-bar a {
-  position: absolute;
-  right: 20px;
-}
-
 .progress-bar .transfer-rate {
   margin: 5px 0px 0px 25px;
+  float: right;
 }
 
-/*.download-controls {
-  display: none;
+.download-progress {
+  margin: 5px 0px 0px 25px;
+  float: right;
+ }
+
+.download-controls {
+  float: right;
+  margin: 0px 0px 0px 25px;
 }
 
-.download-controls a {
-  width: 16px;
-  height: 16px;
-}*/
+#drop-zone {
+  width: 300px;
+  height: 50px;
+  background: #FFFFFF;
+  opacity: 0.5;
+}
