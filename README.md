@@ -38,3 +38,4 @@ Usage
 Acknowledgements
 ----------------
 
+Thanks go to Tatsuhiro Tsujikawa, the creator of aria2, for making such a lightweight, versatile download manager. 
