@@ -82,14 +82,23 @@
 
     <div id="download-item" class="template">
       <div class="accordion-header">
-        <div class="download-name"></div>
-        <div class="download-controls">
-          <a href="#" class="resume-button" class="ui-icon ui-icon-play" title="Resume download"></a>
-          <a href="#" class="pause-button" class="ui-icon ui-icon-pause" title="Pause download"></a>
-          <a href="#" class="remove-button" class="ui-icon ui-icon-close" title="Remove download from queue"></a>
+        <div class="progress-bar">
+          <p class="download-name">Title</p>
+          <p class="transfer-rate" style="color: #ffffff">
+            <span class="ui-icon ui-icon-arrowthick-1-s" title="Download Rate"></span>
+            <span class="download-rate transfer-rate-value">n/a</span>
+          </p>
+          <p class="transfer-rate" style="color: #ffffff">
+            <span class="ui-icon ui-icon-arrowthick-1-n" title="Upload Rate"></span>
+            <span class="upload-rate transfer-rate-value">n/a</span>
+          </p>
+        <!--<div class="download-controls">-->
+          <a href="#" class="ui-icon ui-icon-play resume-button" title="Resume download"></a>
+          <a href="#" class="ui-icon ui-icon-pause pause-button" title="Pause download"></a>
+          <a href="#" class="ui-icon ui-icon-trash remove-button" title="Remove download from queue"></a>
           <!--<a href="#" class="purge-button" class="ui-icon ui-icon-trash" title="Remove download from queue and delete all data"></a>-->
+        <!--</div>-->
         </div>
-        <div class="progress-bar"></div>
       </div>
       <div class="accordion-expansion">
       </div>

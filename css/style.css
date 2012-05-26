@@ -42,11 +42,6 @@ li {
   width: 100%;
 }
 
-.download h3 {
-  height: 24px;
-  padding: 10px 30px 0px 30px;
-}
-
 .progress {
   min-width: 200px;
   text-align: center;
@@ -56,19 +51,30 @@ li {
 }
 
 .download-name {
-  display: none;
+  float: left;
+  margin: 5px 0px 0px 25px;
+  opacity: 1.0;
 }
 
 .progress-bar {
   opacity: 0.7;
-  width: 100%;
   margin-right: 10px;
 }
 
-.download-controls {
+.progress-bar a {
+  position: absolute;
+  right: 20px;
+}
+
+.progress-bar .transfer-rate {
+  margin: 5px 0px 0px 25px;
+}
+
+/*.download-controls {
+  display: none;
 }
 
 .download-controls a {
-  float: left;
-  margin: 0;
-}
+  width: 16px;
+  height: 16px;
+}*/

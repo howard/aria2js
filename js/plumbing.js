@@ -84,7 +84,8 @@ var updateDownloadsAccordion = function (downloads) {
     var progress = downloads[i].completedLength / downloads[i].totalLength;
 
     // Add new entry if download not present yet:
-    var elem = $('#gid' + downloads[i].gid);
+    var gidId = '#gid' + downloads[i].gid;
+    var elem = $(gidId);
     var accordionRebuildRequired = false;
     if (elem.length < 1) {
       elem = $('#download-item').clone();
@@ -93,10 +94,23 @@ var updateDownloadsAccordion = function (downloads) {
       elem.appendTo('#downloads');
       accordionRebuildRequired = true;
 
-      $('#gid' + downloads[i].gid + ' .progress-bar').progressbar(progress * 100);
+      $(gidId + ' .progress-bar').progressbar();
       // Add handling functions for the controls:
-      $('#gid' + downloads[i].gid + ' .resume-button').click(doResume);
-      $('#gid' + downloads[i].gid + ' .pause-button').click(doPause);
+      $(gidId + ' .resume-button').click(doResume);
+      $(gidId + ' .pause-button').click(doPause);
+    }
+
+    // Update download infos:
+    $(gidId + ' .progress-bar').progressbar('value', progress * 100);
+    $(gidId + ' .download-name').html(downloads[i].files[0].path);
+    $(gidId + ' .download-rate').html(humanizeBytes(downloads[i].downloadSpeed, 2) + '/s');
+    $(gidId + ' .upload-rate').html(humanizeBytes(downloads[i].uploadSpeed, 2) + '/s');
+
+    $(gidId + ' .accordion-expansion').empty();
+    $(gidId + ' .accordion-expansion').append('<h3>Files:</h3><ul class="file-list"></ul>');
+    var fileList = $(gidId + ' .file-list');
+    for (j in downloads[i].files) {
+      $(gidId + ' .file-list').append('<li>' + downloads[i].files[j].path + '</li>');
     }
 
 
