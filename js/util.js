@@ -29,3 +29,5 @@ var humanizeBytes = function (bytes, precision) {
 var log = function (data) {
   console.log(data);
 };
+
+var __tmp;

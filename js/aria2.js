@@ -134,28 +134,59 @@ var Aria2 = {
    * Resumes a download specified by its gid, or all downloads, if no gid is
    * specified. If a download is already running, no change to its state is made.
    */
-  resume: function (gid) {
+  resume: function (callback, gid) {
     if (gid)
-      Aria2RPC.unpause(null, gid);
+      Aria2RPC.unpause(callback, gid);
     else
-      Aria2RPC.unpauseAll(null);
+      Aria2RPC.unpauseAll(callback);
   },
 
   /**
    * Pauses a download specified by its gid, or all downloads, if no gid is
    * specified. If a download is already paused, no change to its state is made.
    */
-  pause: function (gid) {
+  pause: function (callback, gid) {
     if (gid)
-      Aria2RPC.pause(null, gid);
+      Aria2RPC.pause(callback, gid);
     else
-      Aria2RPC.pauseAll(null);
+      Aria2RPC.pauseAll(callback);
   },
 
   /**
    * Removes a download specified by its gid from the download queue.
    */
-  remove: function (gid) {
-    Aria2RPC.remove(null, gid);
+  remove: function (callback, gid) {
+    Aria2RPC.remove(callback, gid);
+  },
+
+  /**
+   * Adds and starts a download specified by a torrent or metalink file.
+   */
+  startFileDownload: function (callback, file) {
+    // Read file to string:
+    log(file);
+    __tmp = file;
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      console.log(e);
+      var fileString = e.target.result;
+      console.log(fileString);
+
+      // Start correct type of download:
+      if (file.type == 'application/x-bittorrent') {
+        Aria2RPC.addTorrent(callback, fileString);
+      } else { // Assume metalink - browsers don't recognize their MIME type
+        Aria2RPC.addMetalink(callback, fileString)
+      }
+    };
+
+    reader.readAsBinaryString(file)
+  },
+
+  /**
+   * Adds and starts a download specified by an URI.
+   */
+  startUriDownload: function (callback, uri) {
+    Aria2RPC.addUri(callback, [uri]);
   }
 };

@@ -78,6 +78,17 @@ var uploadDroppedFiles = function (evt) {
   console.log(evt);
 };
 
+var startDownloadFromFile = function (evt) {
+  Aria2.startFileDownload(function (success) {
+    console.log(success);
+    if (success) {
+      $('#new-download-dialog').dialog('close');
+    } else {
+      //TODO: display error message
+    }
+  }, evt.target.files[0]);
+}
+
 
 
 //------------------------------------------------------------------------------
@@ -205,6 +216,7 @@ $(document).ready(function () {
   $('#info-button').click(showInfo);
   $('#shutdown-button').click(doShutdown);
 
+  $('#new-download-dialog :nth-child(3)').bind('change', startDownloadFromFile);
   $('#drop-zone').bind('drop', uploadDroppedFiles);
   $('#drop-zone').bind('dragover', function (evt) {
     console.log(evt);

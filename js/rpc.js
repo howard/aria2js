@@ -102,7 +102,7 @@ var Aria2RPC = {
    * Adds a new download, specified by a torrent file, to the download queue.
    * 
    * @param {function}  callback  Callback function receiving the download's GID.
-   * @param {Object}    torrentFile Torrent file to be used.
+   * @param {String}    torrentFile Torrent file to be used.
    * @param {String[]}  uris      asd
    * @param {Object}    options   Download options. Optional.
    * @param {int}       position  Position in download queue; last by default. Optional.
